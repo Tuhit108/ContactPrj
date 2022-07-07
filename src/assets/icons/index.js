@@ -8,5 +8,6 @@ export const ICON = {
   MoreIc :require('./more.png'),
   CamIc :require('./camera.png'),
   DetailIc :require('./detailic.png'),
-  PhoneIc :require('./phone.png')
+  PhoneIc :require('./phone.png'),
+  SearchIc :require('./search.png')
 }

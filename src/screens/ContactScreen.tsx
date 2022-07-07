@@ -5,6 +5,8 @@ import ContactTab from "../components/ContactTab";
 import HistoryTab from "../components/HistoryTab";
 import  { ICON } from "../../../YourApp/src/assets/icons/";
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
+
+
 const Tab = createBottomTabNavigator();
 const Text = styled.Text`
   

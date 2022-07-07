@@ -116,7 +116,9 @@ const LoginScreen: React.FC = ({navigation}) => {
               }}>
           <TextLogin01>ĐĂNG NHẬP BẰNG BASEACCOUT</TextLogin01>
         </LoginBtn01>
-          <LoginBtn02>
+          <LoginBtn02 onPress={() => {
+              navigation.navigate('BaseScreen');
+          }}>
             <TextLogin02>ĐĂNG NHẬP THỦ CÔNG</TextLogin02>
           </LoginBtn02>
         </LoginView>

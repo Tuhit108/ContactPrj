@@ -7,6 +7,7 @@ import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 // @ts-ignore
 import styled from 'styled-components/native';
+import UserScreen from "@/screens/UserScreen";
 
 const Container = styled.SafeAreaView`
   flex: 1;
@@ -23,6 +24,7 @@ const App: React.FC = () => {
                 >
                     <Stack.Screen name="Login" component={LoginScreen}/>
                     <Stack.Screen name="BaseScreen" component={BaseScreen}/>
+                    <Stack.Screen name="UserScreen" component={UserScreen}/>
                 </Stack.Navigator>
 
 

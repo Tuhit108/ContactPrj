@@ -33,7 +33,63 @@ const UserView = styled.View`
   flex-direction: column ;
 `;
 const UserNameText = styled.Text`
+  font-size:  16px;
+  font-weight: 500;
+  color :#FFFFFF;
+`;
+const UserPhoneText = styled.Text`
+  font-size:  14px;
+  font-weight: 400;
+  color :#FFFFFF;
+`;
+const DrawewContentView = styled.View`
   
+`;
+const NewColectionView = styled.View`
+  height: 60px;
+  justify-content: center;
+  background-color: #FFFFFF;
+`;
+const ChildColectionView = styled.View`
+  flex-direction: row;
+`;
+const ItemIconImage = styled.Image`
+margin-left: 20px;
+  margin-right: 20px;
+  
+`;
+const ItemNameText = styled.Text`
+  font-size:  15px;
+  font-weight: 500;
+  color :#333333;
+  align-self: center;
+`;
+const ColectionView = styled.View`
+  height: 40px;
+  justify-content: center;
+  background-color: rgba(242, 165, 74, 0.1);
+`;
+const DownIconImage = styled.Image`
+margin-left: 16px;
+  margin-right: 16px;
+  top :8px;
+`;
+const ColectionText = styled.Text`
+  font-size:  14px;
+  font-weight: 700;
+  color :#333333;
+`;
+const ColectionChildText = styled.Text`
+  position: absolute;
+  font-size:  13px;
+  font-weight: 500;
+  color :#F2A54A;
+  right: 12px;
+`;
+const ColectionItemView = styled.View`
+  height: 40px;
+  justify-content: center;
+
 `;
 const Text = styled.Text`
   
@@ -49,81 +105,54 @@ const MenuDrawer: React.FC = () => {
 
             />
             <UserView >
-              <Text style={{fontSize: 16, fontWeight: '500', color: '#FFFFFF'}}>
+              <UserNameText >
                 {' '}
                 Nguyễn Tiến Nam
-              </Text>
-              <Text style={{fontSize: 12, fontWeight: '400', color: '#FFFFFF'}}>
+              </UserNameText>
+              <UserPhoneText >
                 {' '}
                 Admin
-              </Text>
+              </UserPhoneText>
             </UserView>
           </ChildView>
         </DrawewHeaderView >
-        <View style={styles.drawercontent}>
-          <View
-              style={{
-                height: 60,
-                justifyContent: 'center',
-                backgroundColor: '#FFFFFF',
-              }}>
-            <View style={{flexDirection: 'row'}}>
-              <Image source={ICON.NewIc} style={styles.itemicon} />
-              <Text style={styles.itemname}> New collection</Text>
-            </View>
-          </View>
-          <View
-              style={{
-                height: 40,
-                justifyContent: 'center',
-                backgroundColor: 'rgba(242, 165, 74, 0.1)',
-              }}>
-            <View style={{flexDirection: 'row'}}>
-              <Image
+        <DrawewContentView >
+          <NewColectionView
+              >
+            <ChildColectionView>
+              <ItemIconImage source={ICON.NewIc} />
+              <ItemNameText > New collection</ItemNameText>
+            </ChildColectionView>
+          </NewColectionView>
+          <ColectionView
+              >
+            <ChildColectionView>
+              <DownIconImage
                   source={ICON.PlayIc}
-                  style={{marginLeft: 16, marginRight: 16, top: 8}}
               />
-              <Text style={{fontSize: 14, fontWeight: '700', color: '#333333'}}>
+              <ColectionText >
                 COLLECTIONS
-              </Text>
-              <Text style={{position: 'absolute', fontSize: 13, fontWeight: '500', color: '#F2A54A',right: 12}}>
+              </ColectionText>
+              <ColectionChildText >
                 edit
-              </Text>
+              </ColectionChildText>
 
-            </View>
-          </View>
+            </ChildColectionView>
+          </ColectionView>
           <View>
             {collections.map(({id, name}) => (
-                <View key={id} style={{justifyContent: 'center', height: 40}}>
-                  <View style={{flexDirection: 'row'}}>
-                    <Image source={ICON.ContactIc} style={styles.itemicon} />
-                    <Text style={styles.itemname}> {name} </Text>
-                  </View>
-                </View>
+                <ColectionItemView key={id} >
+                  <ChildColectionView style={{flexDirection: 'row'}}>
+                    <ItemIconImage source={ICON.ContactIc}  />
+                    <ItemNameText > {name} </ItemNameText>
+                  </ChildColectionView>
+                </ColectionItemView>
             ))}
           </View>
-        </View>
+        </DrawewContentView>
       </WraperView>
   );
 };
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
-  drawerheader: {
-    backgroundColor: '#F2A54A',
-    height: 85,
-  },
-  drawercontent: {},
-  itemicon: {
-    marginLeft: 20,
-    marginRight: 20,
-  },
-  itemname: {
-    fontSize: 15,
-    fontWeight: '500',
-    color: '#333333',
-  },
-});
+
 
 export default MenuDrawer;

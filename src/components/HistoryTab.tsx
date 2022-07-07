@@ -1,7 +1,7 @@
 import * as React from "react";
 // @ts-ignore
 import styled from "styled-components/native";
-import {StyleSheet, View, Image, TouchableOpacity} from 'react-native';
+import { View,TouchableOpacity} from 'react-native';
 import {ICON} from "@/assets/icons";
 import {IMAGE} from "@/assets/imgs";
 
@@ -27,7 +27,7 @@ const HeaderView = styled.View`
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  background-color: white;
+  background-color: #FFFFFF ;
   width: 100%;
   top: 0;
   height: 100%;
@@ -51,7 +51,7 @@ const ContentView = styled.View`
 const Text = styled.Text`
 
 `;
-const ListView = styled.View`
+const ListView = styled.TouchableOpacity`
   flex-direction: row;
   width: 100%;
   height: 10%;
@@ -108,9 +108,11 @@ const HistoryTab: React.FC = ({navigation}) => {
                 </TouchableOpacity>
                 <HeaderText
                 >
-                    Lịch Sửs
+                    Lịch Sử
                 </HeaderText>
-                <TouchableOpacity>
+                <TouchableOpacity onPress={() => {
+                    navigation.navigate('UserScreen');
+                }}>
                     <CamImage source={ICON.CamIc}/>
                 </TouchableOpacity>
             </HeaderView>
